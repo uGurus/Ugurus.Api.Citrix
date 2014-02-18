@@ -21,7 +21,7 @@ namespace Ugurus.Api.Citrix.Client.Impl
             _Config = config;
         }
 
-        protected virtual Task<IDirectLoginResponseData> Authenticate()
+        protected virtual Task<IDirectLoginResponseData> AuthenticateAsync()
         {
             if (_Disposed)
                 throw new ObjectDisposedException("CitrixApiClientBase");
@@ -54,9 +54,22 @@ namespace Ugurus.Api.Citrix.Client.Impl
 
         public void Dispose()
         {
-            if (_Cli != null)
+            Dispose(true);
+            GC.SuppressFinalize(this);
+         
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_Disposed)
             {
-                _Cli.Dispose();
+                if (disposing)
+                {
+                    if (_Cli != null)
+                    {
+                        _Cli.Dispose();
+                      
+                    }
+                }
                 _Cli = null;
                 _Disposed = true;
             }

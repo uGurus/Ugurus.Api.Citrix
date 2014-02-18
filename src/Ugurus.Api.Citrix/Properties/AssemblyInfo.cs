@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Ugurus.Api.Citrix")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Ugurus Citrix REST API client wrapper")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("uGurus LLC")]
 [assembly: AssemblyProduct("Ugurus.Api.Citrix")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © uGurus LLC  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

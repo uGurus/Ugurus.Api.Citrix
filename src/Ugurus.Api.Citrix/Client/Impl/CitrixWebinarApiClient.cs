@@ -19,14 +19,14 @@ namespace Ugurus.Api.Citrix.Client.Impl
 
         }
 
-        public Task<IWebinarCreateRegistrantResponseData> CreateRegistrant(
+        public Task<IWebinarCreateRegistrantResponseData> CreateRegistrantAsync(
             string firstName, string lastName, string emailAddress,
             string webinar)
         {
             if (_Disposed)
                 throw new ObjectDisposedException("CitrixWebinarApiClient");
 
-            return Authenticate().ContinueWith(_ =>
+            return AuthenticateAsync().ContinueWith(_ =>
             {
                 string requestLocation = string.Format(
                   "G2W/rest/organizers/{0}/webinars/{1}/registrants",
